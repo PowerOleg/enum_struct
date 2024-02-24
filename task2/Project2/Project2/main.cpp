@@ -9,8 +9,15 @@ struct bank_account
 
 bool change_balance(bank_account* account, double quantity)
 {
-	account->balance = quantity;
-	return true;
+	if (account->balance != quantity)
+	{
+		account->balance = quantity;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 int main(int argc, char** argv)
